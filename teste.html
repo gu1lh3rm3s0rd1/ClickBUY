@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Bootstrap Example</title>
+  <style>
+    .produto.expandido {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0%) scale(1.29);
+      transition: transform 0.5s ease;
+    }
+
+
+    #fecharMaisBtn {
+      display: none;
+      position: absolute;
+      right: -10px;
+      z-index: 999;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Celulares e Smartphones</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="float: right;" id="mostrarMaisBtnSmartphones"
+          onclick="mostrarMais('smartphones')">Ver Mais</button>
+        <button id="fecharMaisBtnSmartphones"
+          style="display: none; position: absolute; top: 80px; right: -10px; z-index: 999; opacity: 1; transition: opacity 0.5s ease;"
+          onclick="fecharMaisBtn('smartphones')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('smartphones')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-smartphones" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Alimentos e Bebidas</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="float: right;" id="mostrarMaisBtnFood"
+          onclick="mostrarMais('food')">Ver Mais</button>
+        <button id="fecharMaisBtnFood"
+          style="display: none; position: absolute; top: 80px; right: -10px; z-index: 999; opacity: 1; transition: opacity 0.5s ease;"
+          onclick="fecharMaisBtn('food')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('food')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-food" class="produto"></div>
+
+  </div>
+
+  <script>
+    let offsetSmartphones = 0;
+
+    const limit = 15;
+    const isLoading = {
+      food: false,
+      smartphones: false,
+    };
+
+    const apis = {
+      smartphones: {
+        url: 'https://api.mercadolibre.com/sites/MLB/search?category=MLB1051',
+        containerId: 'produtos-smartphones',
+        offset: offsetSmartphones,
+        mostrarMaisBtnId: 'mostrarMaisBtnSmartphones',
+        fecharMaisBtnId: 'fecharMaisBtnSmartphones',
+        sort: 'sort=sold_quantity_',
+        shipping_cost: 'shipping_cost=free',
+        reputation_health_gauge: 'reputation_health_gauge=healthy',
+        tags: 'tags=good_quality_picture',
+      },
+      food: {
+        url: 'https://api.mercadolibre.com/sites/MLB/search?category=MLB1403',
+        containerId: 'produtos-food',
+        offset: 0,
+        mostrarMaisBtnId: 'mostrarMaisBtnFood',
+        fecharMaisBtnId: 'fecharMaisBtnFood',
+        sort: 'sort=sold_quantity_desc',
+        shipping_cost: 'shipping_cost=free',
+        reputation_health_gauge: 'reputation_health_gauge=healthy',
+        tags: 'tags=good_quality_picture',
+      },
+    };
+    
+
+    async function displayResults(apiInfo) {
+      const apiUrl = `${apiInfo.url}&limit=${limit}&offset=${apiInfo.offset}&sort=${apiInfo.sort}&tags=${apiInfo.tags}&reputation_health_gauge=${apiInfo.reputation_health_gauge}&shipping_cost=${apiInfo.shipping_cost}`;
+
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        console.error(`Erro ao obter dados da API ${apiInfo.url}:`, response.status, response.statusText);
+        return;
+      }
+
+      const data = await response.json();
+      console.log(`Dados da API ${apiInfo.url}:`, data);
+
+      const produtosContainer = document.getElementById(apiInfo.containerId);
+
+      const fragment = document.createDocumentFragment();
+
+      data.results.forEach(offer => {
+        const linkProduto = document.createElement('a');
+        linkProduto.href = offer.permalink;
+        linkProduto.target = '_blank';
+        linkProduto.rel = 'noopener noreferrer';
+
+        const produtoItem = document.createElement('div');
+        produtoItem.className = 'produto-item';
+
+        const produtoImagem = document.createElement('div');
+        produtoImagem.className = 'produto-imagem';
+        const imagem = document.createElement('img');
+        imagem.src = offer.thumbnail;
+        produtoImagem.appendChild(imagem);
+
+        const produtoNome = document.createElement('div');
+        produtoNome.className = 'produto-nome';
+        produtoNome.textContent = offer.title;
+
+        const produtoPreco = document.createElement('div');
+        produtoPreco.className = 'produto-preco';
+        produtoPreco.textContent = `R$ ${offer.price}`;
+
+        produtoItem.appendChild(produtoImagem);
+        produtoItem.appendChild(produtoNome);
+        produtoItem.appendChild(produtoPreco);
+        linkProduto.appendChild(produtoItem);
+
+        fragment.appendChild(linkProduto);
+      });
+
+      produtosContainer.appendChild(fragment);
+
+      // Incrementar o offset para a próxima página
+      apiInfo.offset += limit;
+    }
+
+
+    async function mostrarProdutos(apiName) {
+      if (!isLoading[apiName]) {
+        isLoading[apiName] = true;
+        try {
+          await displayResults(apis[apiName]);
+        } catch (error) {
+          console.error(`Erro ao mostrar produtos da API ${apiName}:`, error);
+        } finally {
+          isLoading[apiName] = false;
+          // Adicione qualquer lógica adicional após carregar os produtos
+        }
+      }
+    }
+
+    // Chame a função mostrarProdutos imediatamente após a definição da API
+    mostrarProdutos('smartphones');
+    mostrarProdutos('food');
+
+
+    async function mostrarMais(apiName) {
+      if (!isLoading[apiName]) {
+        mostrarProdutos(apiName);
+        const produtosDiv = document.getElementById(`produtos-${apiName}`);
+        produtosDiv.classList.add('expandido');
+        const fecharMaisBtn = document.getElementById(apis[apiName].fecharMaisBtnId);
+        fecharMaisBtn.style.display = 'inline-block';
+
+        let opacity = 0;
+        const fadeInInterval = setInterval(() => {
+          if (opacity < 1) {
+            opacity += 0.1;
+            fecharMaisBtn.style.opacity = opacity;
+          } else {
+            clearInterval(fadeInInterval);
+          }
+        }, 150);
+
+        // Modificar as propriedades da classe .produto
+        const produtos = document.querySelectorAll(`#produtos-${apiName}.produto`);
+        produtos.forEach(item => {
+          item.style.display = 'grid';
+          item.style.gridTemplateColumns = 'repeat(auto-fill, minmax(200px, 1fr))';
+          item.style.gridGap = '5px';
+          item.style.overflowY = 'scroll';
+          item.style.margin = '0vw 0vw 0vw';
+          item.style.marginTop = '3vw';
+          item.style.backgroundColor = '#f5f5f5';
+          item.style.borderRadius = '15px';
+          item.style.width = '65vw';
+          item.style.height = '65vh';
+          item.style.alignContent = 'center';
+          item.style.justifyContent = 'center';
+          item.style.alignItems = 'center';
+          item.style.justifyItems = 'center';
+          item.style.placeContent = 'unset';
+          item.style.placeItems = 'unset';
+        });
+
+      }
+    }
+
+
+    async function fecharMaisBtn(apiName) {
+      const produtosDiv = document.getElementById(`produtos-${apiName}`);
+      const fecharMaisBtn = document.getElementById(apis[apiName].fecharMaisBtnId);
+
+      const fadeOutInterval = setInterval(() => {
+        produtosDiv.classList.remove('expandido');
+        const produtos = document.querySelectorAll(`#produtos-${apiName}.produto`);
+        produtos.forEach(item => {
+          item.style.display = '';
+          item.style.gridTemplateColumns = '';
+          item.style.gridGap = '';
+          item.style.overflowY = '';
+          item.style.margin = '';
+          item.style.marginTop = '';
+          item.style.backgroundColor = '';
+          item.style.borderRadius = '';
+          item.style.width = '';
+          item.style.height = '';
+          item.style.alignContent = '';
+          item.style.justifyContent = '';
+          item.style.alignItems = '';
+          item.style.justifyItems = '';
+          item.style.placeContent = '';
+          item.style.placeItems = '';
+          item.style.transition = 'transform 0.3s ease';
+        });
+
+        fecharMaisBtn.style.display = 'none';
+
+        clearInterval(fadeOutInterval);
+      }, 150);
+    }
+
+  </script>
+
+
+</body>
+
+</html>

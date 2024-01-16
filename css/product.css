@@ -1,0 +1,181 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,800|Poppins&display=swap);
+
+.container {
+  max-width: 960px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.rodape {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  margin-top: 5vw;
+}
+
+.icon-link>.bi {
+  width: 0.75em;
+  height: 0.75em;
+}
+
+.site-header {
+  background-color: rgba(0, 0, 0, 0.85);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+.site-header a {
+  color: #8e8e8e;
+  transition: color 0.15s ease-in-out;
+}
+
+.site-header a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.product-device {
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  transform: rotate(30deg);
+}
+
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+.flex-equal>* {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .flex-md-equal>* {
+    flex: 1;
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: 4rem;
+}
+
+.button-arrow {
+  display: inline-flex;
+  align-items: center;
+}
+
+.button-arrow.reverse::after {
+  content: "←";
+  margin-left: 5px;
+}
+
+.social-media {
+  margin-top: 1rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-img {
+  margin-right: 1rem;
+  width: 1.5rem;
+}
+
+.social-media-img-none {
+  margin-right: 0;
+}
+
+.main-container {
+  max-width: 120rem;
+  margin: auto;
+  width: 92%;
+}
+
+.main-footer__upper {
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem 0;
+}
+
+.main-footer__row {
+  width: 100%;
+}
+
+.social-media a:hover img {
+  filter: brightness(80%);
+  background-color: #dc3545;
+  border-radius: 50%;
+  /* Adiciona um pouco de arredondamento ao ícone */
+}
+
+/* Adicionando uma transição suave */
+.social-media a img {
+  transition: filter 0.3s ease-in-out, background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+}
+
+#products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#categories {
+  /* width: 200px; */
+  padding: 15px;
+}
+
+#categoryList {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#categoryList li, #categoryListOffcanvas li {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #dc3545;
+  line-height: 1.2;
+}
+
+#selected {
+  position: absolute;
+  top: 5rem;
+  margin-left: 5rem;
+}

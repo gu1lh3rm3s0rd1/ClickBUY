@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="shortcut icon" href="img/shopping-cart.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>ClickBUY!</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <header class="mb-5">
+        <section style="height: 50px;">
+            <nav class="navbar navbar-expand-lg navbar-transparent mb-5" style="background-color: #212529; position: relative; z-index: 1;">
+                <div class="container-fluid d-flex mc">
+                    <div class="bg-gradient me-5" style="background-color: #dc3545;">
+                        <a class="d-none d-sm-block text-white py-3 font2 text-u" style="padding: 25px;"
+                            href="index.html">ClickBUY</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse py-2" id="navbarNav">
+                        <ul class="hd-gui navbar-nav text-uppercase">
+                            <li class="hd-gui nav-item me-3">
+                                <a class="nav-link text-white" href="index.html">Home</a>
+                            </li>
+                            <li class="hd-gui nav-item me-3">
+                                <a class="nav-link text-white" href="/produtos.html">Produtos</a>
+                            </li>
+                            <li class="hd-gui nav-item me-3">
+                                <a class="nav-link text-white" href="#">Sobre</a>
+                            </li>
+                            <li class="hd-gui nav-item me-3">
+                                <a class="nav-link text-white" href="#">Suporte</a>
+                            </li>
+                            <li class="hd-gui nav-item me-3">
+                                <a class="nav-link text-white" href="#">Contato</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <div class="container-fluid">
+        <div class="d-md-flex">
+            <!-- Offcanvas button -->
+            <button class="btn btn-danger bg-gradient d-md-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#categoriesOffcanvas" aria-controls="categoriesOffcanvas">
+                Categorias
+            </button>
+
+            <!-- Offcanvas menu -->
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="categoriesOffcanvas"
+                aria-labelledby="categoriesOffcanvasLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="categoriesOffcanvasLabel">Categorias</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" id="categories">
+                    <ul id="categoryListOffcanvas" class="list-group">
+                        <li class="list-group-item" data-category="smartphones">Celulares e Smartphones</li>
+                        <li class="list-group-item" data-category="eletronicos">Eletrônicos, Áudio e Vídeo</li>
+                        <li class="list-group-item" data-category="computadores">Computadores</li>
+                        <li class="list-group-item" data-category="cameras">Câmeras e Acessórios</li>
+                        <li class="list-group-item" data-category="videogames">Consoles e Videogames</li>
+                        <li class="list-group-item" data-category="eletrodomestico">Eletrodomésticos e Ar Condicionado</li>
+                        <li class="list-group-item" data-category="home">Casa, Móveis e Decoração</li>
+                        <li class="list-group-item" data-category="moda">Calçados, Roupas e Bolsas</li>
+                        <li class="list-group-item" data-category="esportes">Sáude, Esportes e Fitness</li>
+                        <li class="list-group-item" data-category="kids">Brinquedos e Hobbies</li>
+                        <li class="list-group-item" data-category="musica">Instrumentos Musicais</li>
+                        <li class="list-group-item" data-category="joias">Jóias e Relógios</li>
+                        <li class="list-group-item" data-category="food">Alimentos e Bebidas</li>
+                        <li class="list-group-item" data-category="beleza">Beleza e Cuidado Pessoal</li>
+                        <li class="list-group-item" data-category="animais">Animais e Mascotes</li>
+                        <li class="list-group-item" data-category="bebes">Bebês</li>
+                        <li class="list-group-item" data-category="industria">Indústrias e Escritórios</li>
+                        <li class="list-group-item" data-category="construcao">Construção</li>
+                        <li class="list-group-item" data-category="carros">Carros, Motos e Outros</li>
+                        <li class="list-group-item" data-category="colecao">Antiguidades e Coleções</li>
+                        <li class="list-group-item" data-category="arte">Arte, Livraria e Costura</li>
+                        <li class="list-group-item" data-category="servicos">Serviços</li>
+                        <li class="list-group-item" data-category="outros">Outras Categorias</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="d-grid" id="categories">
+                <ul id="categoryList" class="list-group d-none d-md-block">
+                    <li class="list-group-item" data-category="smartphones">Celulares e Smartphones</li>
+                    <li class="list-group-item" data-category="eletronicos">Eletrônicos, Áudio e Vídeo</li>
+                    <li class="list-group-item" data-category="computadores">Computadores</li>
+                    <li class="list-group-item" data-category="cameras">Câmeras e Acessórios</li>
+                    <li class="list-group-item" data-category="videogames">Consoles e Videogames</li>
+                    <li class="list-group-item" data-category="eletrodomestico">Eletrodomésticos e Ar Condicionado</li>
+                    <li class="list-group-item" data-category="home">Casa, Móveis e Decoração</li>
+                    <li class="list-group-item" data-category="moda">Calçados, Roupas e Bolsas</li>
+                    <li class="list-group-item" data-category="esportes">Sáude, Esportes e Fitness</li>
+                    <li class="list-group-item" data-category="kids">Brinquedos e Hobbies</li>
+                    <li class="list-group-item" data-category="musica">Instrumentos Musicais</li>
+                    <li class="list-group-item" data-category="joias">Jóias e Relógios</li>
+                    <li class="list-group-item" data-category="food">Alimentos e Bebidas</li>
+                    <li class="list-group-item" data-category="beleza">Beleza e Cuidado Pessoal</li>
+                    <li class="list-group-item" data-category="animais">Animais e Mascotes</li>
+                    <li class="list-group-item" data-category="bebes">Bebês</li>
+                    <li class="list-group-item" data-category="industria">Indústrias e Escritórios</li>
+                    <li class="list-group-item" data-category="construcao">Construção</li>
+                    <li class="list-group-item" data-category="carros">Carros, Motos e Outros</li>
+                    <li class="list-group-item" data-category="colecao">Antiguidades e Coleções</li>
+                    <li class="list-group-item" data-category="arte">Arte, Livraria e Costura</li>
+                    <li class="list-group-item" data-category="servicos">Serviços</li>
+                    <li class="list-group-item" data-category="outros">Outras Categorias</li>
+                </ul>
+            </div>
+
+            <div class="container d-grid text-mt2">
+                <div id="selected" class="text-start d-flex mt-5 mb-5">
+                    <h1 class="fs-3 text">Categoria: Eletrônicos, Áudio e Vídeo</h1>
+                </div>
+                <div id="products" class="mb-5 text-mt" style="margin-top: 6vw;"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark container-fluid py-5 mt-5">
+        <div class="d-lg-flex justify-content-between align-items-center text-center d-sm-grid d-md-flex mc">
+            <div id="rights" class="text-white mb-4 mb-sm-0">
+                &copy; 2024 Guilherme Benjamim Sordi. Todos os direitos reservados.
+            </div>
+            <div class="d-flex ms-1 align-items-center">
+                <div id="about" class="me-auto">
+                    <h6 class="text-white">
+                        <a href="https://guilhermebenjamin.netlify.app/" target="_blank"
+                            style="text-decoration: none; color: #dc3545;">
+                            Sobre
+                        </a>
+                    </h6>
+                </div>
+                <div id="social" class="ms-5">
+                    <h6 class="text-white">Redes Sociais</h6>
+                    <div class="social-media">
+                        <a href="https://www.linkedin.com/mwlite/in/guilherme-benjamim-sordi-ba04551a1" target="_blank">
+                            <img src="img/linkedin-ico.png" class="social-media-img" alt="" />
+                        </a>
+                        <a href="https://github.com/gu1lh3rm3s0rd1?tab=repositories" target="_blank">
+                            <img src="img/github-ico.png" class="social-media-img" alt="" />
+                        </a>
+                        <a href="https://www.instagram.com/guilhermesordi_/" target="_blank">
+                            <img src="img/insta-ico.png" class="social-media-img social-media-img-none" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script src="js/product.js"></script>
+
+    <script>
+        function handleCategoryClick(event, targetContainer, offcanvas) {
+            // Verifica se o clique foi em um item da lista
+            if (event.target.tagName === 'LI') {
+                targetContainer.innerHTML = '<h1 class="fs-3">Categoria: ' + event.target.textContent + '</h1>';
+                targetContainer.style.display = 'flex';
+
+                // Fecha o offcanvas após o clique
+                offcanvas.hide();
+            }
+        }
+
+        var categoryListOffcanvas = document.getElementById('categoryListOffcanvas');
+        var selectedCategory = document.getElementById('selected');
+        var categoriesOffcanvas = new bootstrap.Offcanvas(document.getElementById('categoriesOffcanvas'));
+
+        // Evento de clique para #categoryListOffcanvas
+        categoryListOffcanvas.addEventListener('click', function (event) {
+            handleCategoryClick(event, selectedCategory, categoriesOffcanvas);
+        });
+
+    </script>
+
+</body>
+
+</html>

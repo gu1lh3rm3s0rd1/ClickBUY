@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/product.css" />
+  <link rel="stylesheet" href="css/media.css" />
+  <link rel="shortcut icon" href="img/shopping-cart.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>ClickBUY!</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header class="mb-5">
+    <section class="image-1">
+      <nav class="navbar navbar-expand-lg navbar-transparent mc mb-5">
+        <div class="container-fluid d-flex mc2">
+          <div class="bg-gradient me-5" style="background-color: #dc3545;">
+            <a class="d-none d-sm-block text-white py-3 font2 text-u" style="padding: 25px;"
+              href="index.html">ClickBUY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse py-2" id="navbarNav">
+            <ul class="hd-gui navbar-nav text-uppercase">
+              <li class="hd-gui nav-item me-3">
+                <a class="nav-link text-white" href="index.html">Home</a>
+              </li>
+              <li class="hd-gui nav-item me-3">
+                <a class="nav-link text-white" href="/produtos.html">Produtos</a>
+              </li>
+              <li class="hd-gui nav-item me-3">
+                <a class="nav-link text-white" href="#">Sobre</a>
+              </li>
+              <li class="hd-gui nav-item me-3">
+                <a class="nav-link text-white" href="#">Suporte</a>
+              </li>
+              <li class="hd-gui nav-item me-3">
+                <a class="nav-link text-white" href="#">Contato</a>
+              </li>
+            </ul>
+          </div>
+          <form action="" id="busca">
+            <div>
+              <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" id="search-icon"
+                  class="bi bi-search" viewBox="0 0 16 16">
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+              </button>
+              <input type="text" id="search-input" placeholder="Pesquisar..." name="input">
+            </div>
+          </form>
+        </div>
+      </nav>
+      <div class="container py-5 display text-start ms-5">
+        <h1 class="text-white text-center w-25 fs-1 mg-t2 lh-1">
+          ClickBUY!
+        </h1>
+        <p class="text-white w-75 fs-5">ClickBUY é o destino de um clique para suas melhores compras online</p>
+      </div>
+      <div class="home-hero__mouse-scroll-cont">
+        <div class="mouse"></div>
+      </div>
+    </section>
+  </header>
+
+  <div id="produto" class="caixa-prod bg-white">
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Eletrônicos, Áudio e Vídeo</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnEletronicos" onclick="mostrarMais('eletronicos')">Ver Mais</button>
+        <button id="fecharMaisBtnEletronicos"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('eletronicos')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('eletronicos')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-eletronicos" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Calçados, Roupas e Bolsas</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnModa" onclick="mostrarMais('moda')">Ver Mais</button>
+        <button id="fecharMaisBtnModa"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('moda')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('moda')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-moda" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Beleza e Cuidado Pessoal</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnSaude" onclick="mostrarMais('saude')">Ver Mais</button>
+        <button id="fecharMaisBtnSaude"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('saude')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('saude')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-saude" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Celulares e Smartphones</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnSmartphones" onclick="mostrarMais('smartphones')">Ver Mais</button>
+        <button id="fecharMaisBtnSmartphones"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('smartphones')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('smartphones')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-smartphones" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Saúde, Esportes e Fitness</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnEsportes" onclick="mostrarMais('esportes')">Ver Mais</button>
+        <button id="fecharMaisBtnEsportes"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('esportes')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('esportes')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-esportes" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Casa, Móveis e Decoração</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnHome" onclick="mostrarMais('home')">Ver Mais</button>
+        <button id="fecharMaisBtnHome"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('home')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('home')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-home" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Brinquedos e Hobbies</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnKids" onclick="mostrarMais('kids')">Ver Mais</button>
+        <button id="fecharMaisBtnKids"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('kids')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('kids')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-kids" class="produto"></div>
+
+    <div class="row" style="margin-right: 0;">
+      <div class="col-9">
+        <h1 class="tituloProd">Alimentos e Bebidas</h1>
+      </div>
+      <div class="col-3 ml-auto text-right all">
+        <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
+          id="mostrarMaisBtnFood" onclick="mostrarMais('food')">Ver Mais</button>
+        <button id="fecharMaisBtnFood"
+          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          onclick="fecharMaisBtn('food')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
+            viewBox="0 0 16 16" onclick="fecharMais('food')">
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="produtos-food" class="produto"></div>
+
+    <div id="maisProdutos" class="mb-5">
+      <h1 class="fs-6">Mais <a style="color: #dc3545; text-decoration: none;" href="/produtos.html">produtos</a> aqui
+      </h1>
+    </div>
+  </div>
+
+  <div id="conteudo" class="content">
+    <div class="fl-gui">
+      <a class="button" href="index.html">
+        <span class="button-arrow reverse"></span>
+        Voltar
+      </a>
+
+      <button id="btn-filtros" class="hide">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 15.4l6-6.6V4H6v4.8l6 6.6zM6 18h12v2H6z" />
+        </svg>
+        Filtros
+      </button>
+    </div>
+
+    <div id="filtros" class="hidden">
+      <h2 class="titulo">Classificar por: </h2>
+      <ul>
+        <li>
+          <input type="checkbox" name="filtro-preco" />
+          <label for="preco">Preço</label>
+        </li>
+        <li>
+          <input type="checkbox" name="filtro-categoria" />
+          <label for="categoria">Categoria</label>
+        </li>
+        <li>
+          <input type="checkbox" name="filtro-avaliacao" />
+          <label for="avaliacao">Avaliação</label>
+        </li>
+      </ul>
+
+      <h2 class="titulo">Tamanho: </h2>
+      <ul>
+        <li>
+          <input type="checkbox" id="tamanho-p" />
+          <label for="tamanho-p">P</label>
+        </li>
+        <li>
+          <input type="checkbox" id="tamanho-m" />
+          <label for="tamanho-m">M</label>
+        </li>
+        <li>
+          <input type="checkbox" id="tamanho-g" />
+          <label for="tamanho-g">G</label>
+        </li>
+      </ul>
+
+      <h2 class="titulo">Valor: </h2>
+      <ul>
+        <li>
+          <input type="checkbox" id="valor-abaixo-50" />
+          <label for="valor-abaixo-50">Até R$ 100</label>
+        </li>
+        <li>
+          <input type="checkbox" id="valor-50-100" />
+          <label for="valor-50-100">R$ 100 - R$ 200</label>
+        </li>
+        <li>
+          <input type="checkbox" id="valor-50-100" />
+          <label for="valor-acima-100">R$ 200 - R$ 300</label>
+        </li>
+        <li>
+          <input type="checkbox" id="valor-acima-100" />
+          <label for="valor-acima-100">R$ 300 - R$ 400</label>
+        </li>
+        <li>
+          <input type="checkbox" id="valor-acima-100" />
+          <label for="valor-acima-100">R$ 400 - R$ 500</label>
+        </li>
+        <li>
+          <input type="checkbox" id="valor-acima-100" />
+          <label for="valor-acima-100">Acima de R$ 500</label>
+        </li>
+      </ul>
+
+      <h2 class="titulo">Frete: </h2>
+      <ul>
+        <li>
+          <input type="checkbox" id="frete-gratis" />
+          <label for="frete-gratis">Frete Grátis</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content2">
+      <div class="sidebar">
+        <aside>
+          <h2 class="titulo">Filtros: </h2>
+          <ul>
+            <li>
+              <input type="checkbox" id="cor-vermelho" />
+              <label for="cor-vermelho">Vermelho</label>
+            </li>
+            <li>
+              <input type="checkbox" id="cor-azul" />
+              <label for="cor-azul">Azul</label>
+            </li>
+            <li>
+              <input type="checkbox" id="cor-verde" />
+              <label for="cor-verde">Verde</label>
+            </li>
+          </ul>
+
+          <h2 class="titulo">Tamanho: </h2>
+          <ul>
+            <li>
+              <input type="checkbox" id="tamanho-p" />
+              <label for="tamanho-p">P</label>
+            </li>
+            <li>
+              <input type="checkbox" id="tamanho-m" />
+              <label for="tamanho-m">M</label>
+            </li>
+            <li>
+              <input type="checkbox" id="tamanho-g" />
+              <label for="tamanho-g">G</label>
+            </li>
+          </ul>
+
+          <h2 class="titulo">Valor: </h2>
+          <ul>
+            <li>
+              <input type="checkbox" id="valor-abaixo-50" />
+              <label for="valor-abaixo-50">Até R$ 100</label>
+            </li>
+            <li>
+              <input type="checkbox" id="valor-50-100" />
+              <label for="valor-50-100">R$ 100 - R$ 200</label>
+            </li>
+            <li>
+              <input type="checkbox" id="valor-50-100" />
+              <label for="valor-acima-100">R$ 200 - R$ 300</label>
+            </li>
+            <li>
+              <input type="checkbox" id="valor-acima-100" />
+              <label for="valor-acima-100">R$ 300 - R$ 400</label>
+            </li>
+            <li>
+              <input type="checkbox" id="valor-acima-100" />
+              <label for="valor-acima-100">R$ 400 - R$ 500</label>
+            </li>
+            <li>
+              <input type="checkbox" id="valor-acima-100" />
+              <label for="valor-acima-100">Acima de R$ 500</label>
+            </li>
+          </ul>
+
+          <h2 class="titulo">Frete: </h2>
+          <ul>
+            <li>
+              <input type="checkbox" id="frete-gratis" />
+              <label for="frete-gratis">Frete Grátis</label>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="content3">
+        <div id="results" class="results-container"></div>
+
+        <div id="pagination" class="itens-container">
+          <button class="btn" id="prev-btn" disabled>&lt; Anterior</button>
+          <button class="btn" id="next-btn" disabled>Próximo &gt;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark container-fluid py-5">
+    <div class="d-lg-flex justify-content-between align-items-center text-center d-sm-grid d-md-flex mc">
+      <div id="rights" class="text-white mb-4 mb-sm-0">
+        &copy; 2024 Guilherme Benjamim Sordi. Todos os direitos reservados.
+      </div>
+      <div class="d-flex ms-1 align-items-center">
+        <div id="about" class="me-auto">
+          <h6 class="text-white">
+            <a href="https://guilhermebenjamin.netlify.app/" target="_blank"
+              style="text-decoration: none; color: #dc3545;">
+              Sobre
+            </a>
+          </h6>
+        </div>
+        <div id="social" class="ms-5">
+          <h6 class="text-white">Redes Sociais</h6>
+          <div class="social-media">
+            <a href="https://www.linkedin.com/mwlite/in/guilherme-benjamim-sordi-ba04551a1" target="_blank">
+              <img src="img/linkedin-ico.png" class="social-media-img" alt="" />
+            </a>
+            <a href="https://github.com/gu1lh3rm3s0rd1?tab=repositories" target="_blank">
+              <img src="img/github-ico.png" class="social-media-img" alt="" />
+            </a>
+            <a href="https://www.instagram.com/guilhermesordi_/" target="_blank">
+              <img src="img/insta-ico.png" class="social-media-img social-media-img-none" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+  <script src="js/index.js"></script>
+
+  <script>
+    document.getElementById("busca").addEventListener("submit", function (event) {
+      event.preventDefault(); // Evita o comportamento padrão de envio do formulário
+      document.getElementById("conteudo").style.display = "block";
+
+    });
+
+    document.getElementById("busca").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      document.getElementById("produto").style.display = "none";
+      document.querySelector('.image-1').classList.remove('image-1');
+
+      var sectionElement = document.querySelector('section');
+      sectionElement.style.transition = 'height 0.8s ease';
+      sectionElement.style.height = '50px';
+
+      document.querySelector('.display').style.setProperty('display', 'none', 'important');
+      document.querySelector('.mc').style.margin = '0';
+      document.querySelector('.mc2').style.margin = '0';
+      document.querySelector('.navbar').style.backgroundColor = '#212529';
+    });
+
+    $(document).ready(function () {
+      $(document).on("mouseenter", ".produto-item", function () {
+        var produtoNome = $(this).find(".produto-nome");
+        produtoNome.css({
+          "white-space": "normal",
+          overflow: "visible",
+          "text-overflow": "initial",
+          transition: "all 0.8s ease",
+        });
+      });
+
+      $(document).on("mouseleave", ".produto-item", function () {
+        var produtoNome = $(this).find(".produto-nome");
+        produtoNome.css({
+          "white-space": "nowrap",
+          overflow: "hidden",
+          "text-overflow": "ellipsis",
+          transition: "all 0.8s ease",
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $("#btn-filtros").click(function () {
+        $("#filtros").toggleClass("hidden");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
