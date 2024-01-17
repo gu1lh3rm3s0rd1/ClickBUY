@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/product.css" />
   <link rel="stylesheet" href="css/media.css" />
-  <link rel="shortcut icon" href="img/shopping-cart.png" type="image/x-icon">
+  <link rel="shortcut icon" href="img/button.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <title>ClickBUY!</title>
@@ -43,7 +43,8 @@
                 <a class="nav-link text-white" href="/produtos.html">Produtos</a>
               </li>
               <li class="hd-gui nav-item me-3">
-                <a class="nav-link text-white" href="#">Sobre</a>
+                <a class="nav-link text-white" href="https://github.com/gu1lh3rm3s0rd1/ClickBUY"
+                  target="_blank">Sobre</a>
               </li>
               <li class="hd-gui nav-item me-3">
                 <a class="nav-link text-white" href="#">Suporte</a>
@@ -73,7 +74,7 @@
         </h1>
         <p class="text-white w-75 fs-5">ClickBUY é o destino de um clique para suas melhores compras online</p>
       </div>
-      <div class="home-hero__mouse-scroll-cont">
+      <div id="mouse" class="home-hero__mouse-scroll-cont">
         <div class="mouse"></div>
       </div>
     </section>
@@ -89,7 +90,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnEletronicos" onclick="mostrarMais('eletronicos')">Ver Mais</button>
         <button id="fecharMaisBtnEletronicos"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('eletronicos')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('eletronicos')">
@@ -109,7 +110,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnModa" onclick="mostrarMais('moda')">Ver Mais</button>
         <button id="fecharMaisBtnModa"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('moda')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('moda')">
@@ -129,7 +130,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnSaude" onclick="mostrarMais('saude')">Ver Mais</button>
         <button id="fecharMaisBtnSaude"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('saude')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('saude')">
@@ -149,7 +150,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnSmartphones" onclick="mostrarMais('smartphones')">Ver Mais</button>
         <button id="fecharMaisBtnSmartphones"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('smartphones')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('smartphones')">
@@ -169,7 +170,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnEsportes" onclick="mostrarMais('esportes')">Ver Mais</button>
         <button id="fecharMaisBtnEsportes"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('esportes')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('esportes')">
@@ -189,7 +190,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnHome" onclick="mostrarMais('home')">Ver Mais</button>
         <button id="fecharMaisBtnHome"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('home')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('home')">
@@ -209,7 +210,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnKids" onclick="mostrarMais('kids')">Ver Mais</button>
         <button id="fecharMaisBtnKids"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('kids')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('kids')">
@@ -229,7 +230,7 @@
         <button type="button" class="btn text-dark" style="margin-right: 0;align-items: baseline;"
           id="mostrarMaisBtnFood" onclick="mostrarMais('food')">Ver Mais</button>
         <button id="fecharMaisBtnFood"
-          style="display: none; position: absolute; right: 10vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1450%);"
+          style="display: none; position: absolute; right: 5vw; z-index: 999; opacity: 1; transition: opacity 0.5s ease; padding: 0vw 1vw 0vw 1vw; transform: translate(15%, -1485%);"
           onclick="fecharMaisBtn('food')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x-lg"
             viewBox="0 0 16 16" onclick="fecharMais('food')">
@@ -248,164 +249,7 @@
   </div>
 
   <div id="conteudo" class="content">
-    <div class="fl-gui">
-      <a class="button" href="index.html">
-        <span class="button-arrow reverse"></span>
-        Voltar
-      </a>
-
-      <button id="btn-filtros" class="hide">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M12 15.4l6-6.6V4H6v4.8l6 6.6zM6 18h12v2H6z" />
-        </svg>
-        Filtros
-      </button>
-    </div>
-
-    <div id="filtros" class="hidden">
-      <h2 class="titulo">Classificar por: </h2>
-      <ul>
-        <li>
-          <input type="checkbox" name="filtro-preco" />
-          <label for="preco">Preço</label>
-        </li>
-        <li>
-          <input type="checkbox" name="filtro-categoria" />
-          <label for="categoria">Categoria</label>
-        </li>
-        <li>
-          <input type="checkbox" name="filtro-avaliacao" />
-          <label for="avaliacao">Avaliação</label>
-        </li>
-      </ul>
-
-      <h2 class="titulo">Tamanho: </h2>
-      <ul>
-        <li>
-          <input type="checkbox" id="tamanho-p" />
-          <label for="tamanho-p">P</label>
-        </li>
-        <li>
-          <input type="checkbox" id="tamanho-m" />
-          <label for="tamanho-m">M</label>
-        </li>
-        <li>
-          <input type="checkbox" id="tamanho-g" />
-          <label for="tamanho-g">G</label>
-        </li>
-      </ul>
-
-      <h2 class="titulo">Valor: </h2>
-      <ul>
-        <li>
-          <input type="checkbox" id="valor-abaixo-50" />
-          <label for="valor-abaixo-50">Até R$ 100</label>
-        </li>
-        <li>
-          <input type="checkbox" id="valor-50-100" />
-          <label for="valor-50-100">R$ 100 - R$ 200</label>
-        </li>
-        <li>
-          <input type="checkbox" id="valor-50-100" />
-          <label for="valor-acima-100">R$ 200 - R$ 300</label>
-        </li>
-        <li>
-          <input type="checkbox" id="valor-acima-100" />
-          <label for="valor-acima-100">R$ 300 - R$ 400</label>
-        </li>
-        <li>
-          <input type="checkbox" id="valor-acima-100" />
-          <label for="valor-acima-100">R$ 400 - R$ 500</label>
-        </li>
-        <li>
-          <input type="checkbox" id="valor-acima-100" />
-          <label for="valor-acima-100">Acima de R$ 500</label>
-        </li>
-      </ul>
-
-      <h2 class="titulo">Frete: </h2>
-      <ul>
-        <li>
-          <input type="checkbox" id="frete-gratis" />
-          <label for="frete-gratis">Frete Grátis</label>
-        </li>
-      </ul>
-    </div>
-
     <div class="content2">
-      <div class="sidebar">
-        <aside>
-          <h2 class="titulo">Filtros: </h2>
-          <ul>
-            <li>
-              <input type="checkbox" id="cor-vermelho" />
-              <label for="cor-vermelho">Vermelho</label>
-            </li>
-            <li>
-              <input type="checkbox" id="cor-azul" />
-              <label for="cor-azul">Azul</label>
-            </li>
-            <li>
-              <input type="checkbox" id="cor-verde" />
-              <label for="cor-verde">Verde</label>
-            </li>
-          </ul>
-
-          <h2 class="titulo">Tamanho: </h2>
-          <ul>
-            <li>
-              <input type="checkbox" id="tamanho-p" />
-              <label for="tamanho-p">P</label>
-            </li>
-            <li>
-              <input type="checkbox" id="tamanho-m" />
-              <label for="tamanho-m">M</label>
-            </li>
-            <li>
-              <input type="checkbox" id="tamanho-g" />
-              <label for="tamanho-g">G</label>
-            </li>
-          </ul>
-
-          <h2 class="titulo">Valor: </h2>
-          <ul>
-            <li>
-              <input type="checkbox" id="valor-abaixo-50" />
-              <label for="valor-abaixo-50">Até R$ 100</label>
-            </li>
-            <li>
-              <input type="checkbox" id="valor-50-100" />
-              <label for="valor-50-100">R$ 100 - R$ 200</label>
-            </li>
-            <li>
-              <input type="checkbox" id="valor-50-100" />
-              <label for="valor-acima-100">R$ 200 - R$ 300</label>
-            </li>
-            <li>
-              <input type="checkbox" id="valor-acima-100" />
-              <label for="valor-acima-100">R$ 300 - R$ 400</label>
-            </li>
-            <li>
-              <input type="checkbox" id="valor-acima-100" />
-              <label for="valor-acima-100">R$ 400 - R$ 500</label>
-            </li>
-            <li>
-              <input type="checkbox" id="valor-acima-100" />
-              <label for="valor-acima-100">Acima de R$ 500</label>
-            </li>
-          </ul>
-
-          <h2 class="titulo">Frete: </h2>
-          <ul>
-            <li>
-              <input type="checkbox" id="frete-gratis" />
-              <label for="frete-gratis">Frete Grátis</label>
-            </li>
-          </ul>
-        </aside>
-      </div>
-
       <div class="content3">
         <div id="results" class="results-container"></div>
 
@@ -471,6 +315,11 @@
       document.querySelector('.mc').style.margin = '0';
       document.querySelector('.mc2').style.margin = '0';
       document.querySelector('.navbar').style.backgroundColor = '#212529';
+
+      var mouseElement = document.getElementById('mouse');
+      if (mouseElement) {
+        mouseElement.style.display = 'none';
+      }
     });
 
     $(document).ready(function () {
