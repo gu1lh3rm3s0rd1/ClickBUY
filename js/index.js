@@ -1,5 +1,4 @@
 window.addEventListener("DOMContentLoaded", (event) => {
-  //evento para capturar o submit
   document.getElementById("busca").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -10,16 +9,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-let itemsPerPage = 20;
+let itemsPerPage = 36;
 let currentPage = 1;
 let totalItems = 0;
 let totalPages = 0;
 let currentResults = [];
 
+let sort = 'sort=sold_quantity_desc';
+let shipping_cost = 'shipping_cost=free';
+let reputation_health_gauge = 'reputation_health_gauge=healthy';
+let tags = 'tags=good_quality_picture';
+
 function searchProducts(query) {
-  let url = `https://api.mercadolibre.com/sites/MLB/search?q=${encodeURIComponent(
-    query
-  )}`;
+  let url = `https://api.mercadolibre.com/sites/MLB/search?q=${encodeURIComponent(query)}&${sort}&${shipping_cost}&${reputation_health_gauge}&${tags}`;
 
   fetch(url)
     .then((response) => response.json())
@@ -48,22 +50,34 @@ function displayResults() {
 
   currentItems.forEach(function (product) {
     let productElement = document.createElement("div");
-    productElement.classList.add("product");
+    productElement.classList.add("produto");
+
+    let formattedPrice = parseFloat(product.price).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
     productElement.innerHTML = `
-      <img src="${product.thumbnail}" alt="${product.title}">
-      <div style='display: grid; justify-content: center; align-content: center; align-items: center; justify-items: start;'>
-        <p>${product.title}</p>
-        <p>R$ ${product.price}</p>
+      <div id='link'>
+        <div class='produto-item' id='search'>
+          <div class='produto-imagem'>
+            <img src="${product.thumbnail}" alt="${product.title}">
+          </div>
+          <div class='produto-nome'>${product.title}</div>
+          <div class='produto-preco'>${formattedPrice}</div>
+        </div>
       </div>
     `;
 
     productElement.addEventListener("click", function () {
-      // permalink é uma propriedae retornada da API que retorna a página original do produto no Mercado Livre
       window.open(product.permalink, "_blank");
     });
 
     resultsContainer.appendChild(productElement);
   });
+
 
   let paginationContainer = document.getElementById("pagination");
   paginationContainer.innerHTML = "";
@@ -105,7 +119,7 @@ function goToNextPage() {
 
 // const limit = 5;
 const defaultLimit = 5;
-let limit = defaultLimit; 
+let limit = defaultLimit;
 
 const isLoading = {
   eletronicos: false,
@@ -249,7 +263,15 @@ async function displayResults2(apiInfo) {
 
     const produtoPreco = document.createElement('div');
     produtoPreco.className = 'produto-preco';
-    produtoPreco.textContent = `R$ ${offer.price}`;
+
+    const formattedPrice = parseFloat(offer.price).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+    produtoPreco.textContent = formattedPrice;
 
     produtoItem.appendChild(produtoImagem);
     produtoItem.appendChild(produtoNome);
@@ -276,7 +298,6 @@ async function mostrarProdutos(apiName) {
       console.error(`Erro ao mostrar produtos da API ${apiName}:`, error);
     } finally {
       isLoading[apiName] = false;
-      // Adicione qualquer lógica adicional após carregar os produtos
     }
   }
 }
@@ -308,7 +329,6 @@ async function mostrarMais(apiName) {
       }
     }, 150);
 
-    // Modificar as propriedades da classe .produto
     const produtos = document.querySelectorAll(`#produtos-${apiName}.produto`);
     produtos.forEach(item => {
       item.style.display = 'grid';

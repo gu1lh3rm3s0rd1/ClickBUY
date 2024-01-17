@@ -1,5 +1,3 @@
-
-
 // "MLB1743": "Carros, Motos e Outros",
 // "MLB1071": "Animais e Mascotas",
 // "MLB1367": "Antiguidades e Coleções",
@@ -326,7 +324,16 @@ async function displayResults(apiInfo) {
 
       const produtoPreco = document.createElement('div');
       produtoPreco.className = 'produto-preco';
-      produtoPreco.textContent = `R$ ${offer.price}`;
+
+      // Formatando o preço para incluir separadores de milhares e manter duas casas decimais
+      const formattedPrice = parseFloat(offer.price).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+      produtoPreco.textContent = formattedPrice;
 
       produtoItem.appendChild(produtoImagem);
       produtoItem.appendChild(produtoNome);
