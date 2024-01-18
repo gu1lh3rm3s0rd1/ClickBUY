@@ -40,33 +40,27 @@
   }
 
   .produto {
-    margin-bottom: 20vw;
-    /* padding: 12px; */
+    margin-bottom: 10vw;
+    padding: 0 !important;
   }
 
   .produto-item {
-    width: 54vw;
+    width: 58vw;
+  }
+
+  #search {
+    width: 40vw;
   }
 
   .produto-nome {
-    margin-top: 10px;
-    width: 195px;
-    height: 65px;
-    white-space: normal;
-    overflow: unset;
-    text-overflow: unset;
-    transition: all 0.5s ease 0s;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    line-height: 1.2;
+    width: 145px;
+    white-space: unset !important;
+    overflow: unset !important;
+    text-overflow: unset !important;
   }
 
   .produto-item2 {
-    width: 165px;
+    width: 38vw;
   }
 
   .produto-nome2 {
@@ -193,7 +187,7 @@
 
   #selected {
     position: relative;
-    top: 1rem;
+    top: -1rem;
     margin-left: 0;
     margin-top: 0rem !important;
     margin-bottom: 0rem !important;
