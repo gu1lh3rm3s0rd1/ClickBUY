@@ -1,3 +1,6 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+
 /* Tela pequena (smartphones) */
 @media screen and (max-width: 430px) {
   .mgx-5 {

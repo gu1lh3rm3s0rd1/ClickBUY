@@ -1,9 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,800|Poppins&display=swap);
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
 
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   /* font-family: "ITC Franklin Gothic Std"; */
   /* font-family: fantasy; */
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
@@ -462,20 +477,22 @@ section {
 /* barra de scroll */
 
 body {
-  scrollbar-width: thin; /* Para navegadores Firefox */
-  scrollbar-color: #dc3545 #f1f1f1; /* Cor do botão de rolagem e da área de trilha */
+  scrollbar-width: thin;
+  /* Para navegadores Firefox */
+  scrollbar-color: #dc3545 #f1f1f1;
+  /* Cor do botão de rolagem e da área de trilha */
 }
 
 /* Para navegadores WebKit (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
-  width: 3px; 
+  width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #dc3545; 
-  border-radius: 6px; 
+  background-color: #dc3545;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f1f1f1; 
+  background-color: #f1f1f1;
 }
