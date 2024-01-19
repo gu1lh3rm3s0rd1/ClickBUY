@@ -45,7 +45,7 @@
                             </li>
                             <li class="hd-gui nav-item me-3">
                                 <a class="nav-link text-white" href="https://github.com/gu1lh3rm3s0rd1/ClickBUY"
-                                target="_blank">Sobre</a>
+                                    target="_blank">Sobre</a>
                             </li>
                             <li class="hd-gui nav-item me-3">
                                 <a class="nav-link text-white" href="#">Suporte</a>
@@ -161,7 +161,7 @@
                 <div id="social" class="ms-5">
                     <h6 class="text-white">Redes Sociais</h6>
                     <div class="social-media">
-                        <a href="https://www.linkedin.com/mwlite/in/guilherme-benjamim-sordi-ba04551a1" target="_blank">
+                        <a href="https://www.linkedin.com/in/guilherme-sordi-33ab06233/" target="_blank">
                             <img src="img/linkedin-ico.png" class="social-media-img" alt="" />
                         </a>
                         <a href="https://github.com/gu1lh3rm3s0rd1?tab=repositories" target="_blank">
@@ -190,6 +190,7 @@
         }
 
         var categoryListOffcanvas = document.getElementById('categoryListOffcanvas');
+        var categoryList = document.getElementById('categoryList');
         var selectedCategory = document.getElementById('selected');
         var categoriesOffcanvas = new bootstrap.Offcanvas(document.getElementById('categoriesOffcanvas'));
 
@@ -198,6 +199,10 @@
             handleCategoryClick(event, selectedCategory, categoriesOffcanvas);
         });
 
+                // Evento de clique para #categoryListOffcanvas
+        categoryList.addEventListener('click', function (event) {
+            handleCategoryClick(event, selectedCategory, categoriesOffcanvas);
+        });
     </script>
 
 </body>
